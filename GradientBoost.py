@@ -8,13 +8,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-get_ipython().run_line_magic('matplotlib', 'inline')
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[16]:
 
 
-obesity = pd.read_csv('Obesity.csv')
+obesity = pd.read_csv('raw_data.csv')
 
 
 # In[17]:
@@ -100,7 +100,7 @@ print('\n')
 print(classification_report(y_test, predictions3))
 print('\n Cross Validation \n')
 scores=cross_val_score(grad_100,X,y, cv=10, scoring='accuracy')
-print(scores.mean())
+print(scores.mean(), scores.std())
 
 
 # In[29]:

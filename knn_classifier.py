@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import cross_val_score
-
+import numpy as np
 
 
 data_path = "raw_data.csv"
@@ -46,6 +46,8 @@ y_pred = clf.predict(X_test)
 # Avaliar o modelo
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Acurácia: {accuracy}')
+
+std_dv = np.std(scores)
 
 conf_matrix = confusion_matrix(y_pred, y_test)
 print(conf_matrix)

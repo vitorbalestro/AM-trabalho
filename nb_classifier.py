@@ -34,11 +34,9 @@ clf = CategoricalNB()
 scores = cross_val_score(clf, X, y, cv = 10)
 
 print("Média de acurácia: %0.2f \n Desvio padrão: %0.2f \n Melhor acurácia: %0.2f" % (scores.mean(), scores.std(), scores.max()))
-
-
+std_dv = np.std(scores)
 clf = clf.fit(X_train,y_train)
-
-
+print(np.std([0.57819905, 0.68246445, 0.63033175, 0.68720379, 0.62085308, 0.63981043, 0.6492891,  0.68720379, 0.60663507]))
 # Fazer previsões
 y_pred = clf.predict(X_test)
 

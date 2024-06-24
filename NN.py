@@ -50,7 +50,7 @@ def cramer_v_old( x, y ):
 # In[3]:
 
 
-df = pd.read_csv('./data.csv')
+df = pd.read_csv('raw_data.csv')
 
 
 # #### data description

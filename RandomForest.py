@@ -8,13 +8,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-get_ipython().run_line_magic('matplotlib', 'inline')
+#get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[2]:
 
 
-obesity = pd.read_csv('Obesity.csv')
+obesity = pd.read_csv('raw_data.csv')
 
 
 # In[3]:
@@ -103,14 +103,16 @@ print('\n')
 print(classification_report(y_test, predictions50))
 print('\n')
 print('Cross Validation\n')
-print(cross_val_score(rf_500,X,y, cv=10, scoring='accuracy').mean())
+scores =cross_val_score(rf_500,X,y, cv=10, scoring='accuracy')
+print(scores.mean(), scores.std())
 print('\n 500 estimators \n')
 print(confusion_matrix(y_test, predictions500))
 print('\n')
 print(classification_report(y_test, predictions500))
 print('\n')
 print('Cross Validation\n')
-print(cross_val_score(rf_500,X,y, cv=10, scoring='accuracy').mean())
+scores = cross_val_score(rf_500,X,y, cv=10, scoring='accuracy')
+print(scores.mean(), scores.std())
 
 
 # In[39]:
